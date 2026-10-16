@@ -1,3 +1,0 @@
-function e(e,t){return e[t]()}async function t(e){let{default:t}=await import(
-/* @vite-ignore */
-e);return t()}let n;const r={async init(e,r){n=new(await(t(e))).Session(r);let i=n.error();if(i)throw Error(i);return{functions:n.numFunctions(),modules:n.numModules()}},compile:(e,t)=>n.compile(e,t),stage:t=>e(n,t),add:(e,t,r)=>n.add(e,t,r),matchable:()=>n.matchable(),numCandidates:()=>n.numCandidates(),match:(e,t)=>n.match(e,t),moduleOf:e=>n.moduleOf(e),printFunction:e=>n.printFunction(e)};self.onmessage=async e=>{let{id:t,method:n,args:i}=e.data;try{let e=await r[n](...i);self.postMessage({id:t,result:e})}catch(e){self.postMessage({id:t,error:String(e.message??e)})}};
