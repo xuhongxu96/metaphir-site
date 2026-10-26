@@ -1,6 +1,4 @@
-# Deploys this repository, the built MetaphIR website, to GitHub Pages as it
-# is: the site is built elsewhere (web/scripts/deploy_site.sh in the MetaphIR
-# repository) and committed here.
+# Keep this Pages site as a redirect to the app deployed from the MetaphIR repository.
 name: Pages
 
 on:
@@ -26,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: .
       - id: deployment
